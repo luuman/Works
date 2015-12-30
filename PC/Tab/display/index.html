@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MIUI文档目录</title>
+<meta name=viewport content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<link rel="shortcut icon" main31_1="http://cdn-img.easyicon.net/favicon.ico" />
+<style type="text/css">
+    blockquote,body,button,dd,dl,dt,fieldset,figure,form,h1,h2,h3,h4,h5,h6,input,legend,li,ol,p,pre,select,td,textarea,th,ul{
+        box-sizing: border-box;                /*CSS3 属性值*/
+        -moz-box-sizing: border-box;           /* Firefox */
+        -webkit-box-sizing: border-box;        /* Safair */
+        font-family: "Times New Roman","楷体";
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+    }
+    body{
+        background-color: #000;color: #FFF; 
+        /*background-color: #FFF;color: #000;*/
+        margin: 5px;
+    }
+    textarea{
+        width: 100%;
+        background-color: #000;
+    }
+    .main{
+        /*width: 1000px;*/
+        width: 100%;
+        margin: 0 auto;
+    }
+    .main a{
+        color: #888;
+        text-decoration: none;
+    }
+    .main a:hover{
+        color: #FFF;
+    }
+
+    /* content 文本格式 */
+    .content ol, .content ul {
+        border-left: 1px solid #666;
+        list-style-type: none;
+        margin: 0 0 9px;
+        padding: 0 0 0 25px;
+    }
+    .content li.title > a:before{
+        /*content: '\25BC';*/
+        content: '\25B6';
+        display: inline-block;
+        font-size: 75%;
+        margin-right: 5px;
+        width: 10px;
+    }
+    .content > ol, .content > ul {
+        border-left: medium none;
+        padding: 0;
+    }
+    h1{
+        text-align:center;
+        font-family:"Times New Roman","华文新魏";
+        font-size:25px;
+        font-weight: normal;
+    }
+</style>
+</head>
+<body style="background-color: #000;color: #FFF;">
+    <div class="main">
+        <div class="content">
+            <h1>MIUI文档目录</h1>
+            <ul>
+                theme_values.xml&nbsp;&nbsp;&nbsp;&nbsp;文字颜色配置文件
+                <!-- 一级标题 -->
+                <li class="title">
+                    <a onclick="return click_a('main1_1')" href="javascript:void(0);" onclick="js_method()"><B>alarmscreen</B>&nbsp;&nbsp;&nbsp;&nbsp;个性闹钟文件夹</a>   <!-- main1_1 -->
+                    <ol>
+                        <div id="main1_1" style="display:none;">                          <!-- main1_1 -->
+                            <!-- 二级标题 -->
+                            <li class="title">
+                                <a onclick="return click_a('main1_1-1')" href="javascript:void(0);" onclick="js_method()">二级标题</a>   <!-- main1_1-1 -->
+                                <div id="main1_1-1" style="display:none;">                       <!-- main1_1-1 -->
+                                    <ol>
+                                        <li>
+                                            <!-- 三级标题 -->
+                                            <li class="title">
+                                                <a onclick="return click_a('main1_1-1-1')" href="javascript:void(0);" onclick="js_method()">三级标题</a>   <!-- main1_1-1-1 -->
+                                                <div id="main1_1-1-1" style="display:none;">                       <!-- main1_1-1-1 -->
+                                                    <ol>
+                                                        <li>
+                                                            <B>1、</B><span>正文内容</span>
+                                                        </li>
+                                                        <li>
+                                                            <B>2、</B><span>正文内容</span>
+                                                        </li>
+                                                    </ol>
+                                                </div>
+                                            </li>
+                                            <!-- 三级标题 -->
+                                            <li class="title">
+                                                <a onclick="return click_a('main1_1-1-2')" href="javascript:void(0);" onclick="js_method()">三级标题</a>   <!-- main1_1-1-2 -->
+                                                <div id="main1_1-1-2" style="display:none;">                       <!-- main1_1-1-1 -->
+                                                    <ol>
+                                                        <li>
+                                                            <B>1、</B><span>正文内容</span>
+                                                        </li>
+                                                        <li>
+                                                            <B>2、</B><span>正文内容</span>
+                                                        </li>
+                                                    </ol>
+                                                </div>
+                                            </li>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </li>
+                            <!-- 二级标题 -->
+                            <li class="title">
+                                <a onclick="return click_a('main1_1-2')" href="javascript:void(0);" onclick="js_method()">二级标题</a>   <!-- main1_1-2 -->
+                                <div id="main1_1-2" style="display:none;">                       <!-- main1_1-2 -->
+                                    <ol>
+                                        <li>
+                                            <B>1、</B><span>正文内容</span>
+                                        </li>
+                                        <li>
+                                            <B>2、</B><span>正文内容</span>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </li>
+                        </div>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+        <!-- content结束 -->
+
+
+
+    </div><!-- main结束 -->
+</body>
+<!-- 功能：隐藏和显示div  参数div  Display：html标签id -->
+<script language="javascript" type="text/javascript">   
+    function click_a(divDisplay)
+    {
+        if(document.getElementById(divDisplay).style.display != "block")
+        {document.getElementById(divDisplay).style.display = "block";}
+        else{document.getElementById(divDisplay).style.display = "none";}
+    }
+</script>
+</html>

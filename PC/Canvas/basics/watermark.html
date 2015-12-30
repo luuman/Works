@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas 水印</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <style type="text/css">
+    body{
+        background: #000;
+    }
+    canvas{
+        display: block;
+        margin: 0 auto;
+        border: 1px solid #aaa;
+    }
+    input{
+        display: block;
+        margin: 20px auto;
+        width: 800px;
+    }
+    .watermark{
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <canvas id="Canvas">您的浏览器不支持Canvas</canvas>
+    <input type="range" id="scale-range" value="1.0" max="3.0" min="0.5" step="0.01">
+    <canvas id="watermark" class="watermark">您的浏览器不支持Canvas</canvas>
+    <script type="text/javascript">
+        var Canvas = document.getElementById('Canvas');
+        var context = Canvas.getContext('2d');
+        var image = new Image();
+        var slider = document.getElementById("scale-range");
+
+        var watermark = document.getElementById('watermark');
+        var watermarkcontext = watermark.getContext('2d');
+
+        window.onload = function(){
+            Canvas.width = 700;
+            Canvas.height = 700;
+
+
+            // context.fillStyle='red';
+            // context.fillRect(100,100,400,400);
+            var scale = slider.value;
+            image.src="bg-1.jpg";
+            image.onload=function(){
+                // context.drawImage(image,0,0);
+                // context.drawImage(image,0,0,Canvas.width,Canvas.height);
+
+                drawImageByScale(scale);
+                slider.onmousemove = function(){
+                    scale=slider.value;
+                    drawImageByScale(scale);
+                }
+            }
+            //watermark canvas
+            watermark.width= 300;
+            watermark.height= 100;
+
+            watermarkcontext.font="bold 50px 华文新魏";
+            watermarkcontext.lineWidth="1";
+            watermarkcontext.fillStyle="rgba( 255,255,255,0.5)";
+            watermarkcontext.fillText("世平阜康",20,70);
+        }
+        function drawImageByScale(scale){
+            var imageWidth = 700*scale;
+            var imageHeight = 700*scale;
+
+            // 裁剪实现绘制
+            // var sx = imageWidth /2 - Canvas.width / 2;
+            // var sy = imageHeight /2 - Canvas.height / 2;
+            // context.drawImage(image,sx,sy,Canvas.width,Canvas.height,0,0,Canvas.width,Canvas.height);
+
+
+            var dx = Canvas.width / 2 - imageWidth/2;
+            var dy = Canvas.height / 2 - imageHeight/2;
+            context.clearRect(0,0,Canvas.width,Canvas.height);
+            context.drawImage(image,dx,dy,imageWidth,imageHeight);
+            context.drawImage(watermark,Canvas.width-watermark.width,Canvas.height-watermark.height);
+
+        }
+    </script>
+</body>
+</html>
