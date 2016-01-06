@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<meta name="Author" content="http://www.yqhlm.com">
+<title>壹生护理</title>
+<link href="css/examples.css" rel="stylesheet" type="text/css"  />
+<link href="css/jquery.pagepiling.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.pagepiling.min.js"></script> 
+<script>
+$(function(){
+
+	$(".xk").mouseover(function(){
+		$(".hide1").show();
+		})
+	$(".xk").mouseout(function(){
+		$(".hide1").hide();
+		})
+	$(".hide1").mouseover(function(){
+		$(this).show();
+		})
+	$(".hide1").mouseout(function(){
+		$(this).hide();
+		})
+		
+});
+</script>
+</head>
+<script type="text/javascript">
+	var deleteLog = false;
+
+	$(document).ready(function() {
+		$('#pagepiling').pagepiling({
+			menu: '#menu',
+			anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],
+			sectionsColor: ['#6ad6a0', '#47d2e7', '#5686c6', '#18c8f7', '#ed6374', '#2C3E50'],
+			loopTop: true,
+			loopBottom: true
+		});
+		
+		$('.divheight').height($(window).height()- 95);
+	});
+</script> 
+<body>
+	<ul id="menu" style="height:95px;background:#FFF;border-bottom: 1px solid #b4b5b6;">
+    <a href="http://app.yishenghuli.com" ><img src="images/logo.jpg" style=" float:left; position:  relative; left:24%;"/></a>
+		<li data-menuanchor="page1" class="active"><a href="#page1">客户端</a></li>
+		<li data-menuanchor="page2"><a href="#page2">服务端</a></li>
+		<li data-menuanchor="page3"><a href="#page3">关于我们</a></li>
+
+	</ul>
+
+	<div style="position:fixed;top:50px;left:50px;color:white;z-index:999;" id="callbacksDiv"></div>
+
+	<div id="pagepiling">
+	    <div class="section" id="section1">
+			<p class="zong divheight" style="background-size:contain; margin-top:95px;"></p>
+      </div>
+	    <div class="section" id="section2">
+	    	<div class="intro">
+				<p class="yongjin divheight" style="background-size:contain; margin-top:35px;"></p>
+    	  </div>
+	    </div>
+	    <div class="section" id="section3">
+	    	<div class="intro">
+				<p class="jiangli divheight" style="background-size:contain; margin-top:95px;">
+                <a class="xk jionus" target="_blank" href="#"></a>
+                <div class="hide1" style=" z-index:1000; display:none; float:left; width:200px; height:200px;    left: 50%;
+    margin-left: 70px;
+    top:600px;
+    position: absolute;">
+          	<img src="images/eriweima.png" />
+            </p>
+          </div>
+                
+    	  </div>
+
+	    </div>
+	</div>
+
+</body>
+</html>

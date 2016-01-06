@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="ui-mobile" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>欢迎加入织梦者</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection"content="telephone=no, email=no" />
+    <meta name="format-detection" content="telphone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- 适应移动端end -->
+    <style type="text/css">
+    *{
+        padding: 0;
+        margin: 0;
+    }
+            .zindex-div{
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);;
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 10;
+            }
+            .zindex-container{
+                width: 90%;
+                /*height: 21.5em;*/
+                background-color: #fff;
+                z-index: 100;
+                border-radius: 5px;
+                position: fixed;
+                left: 50%;
+                top: 50%;
+                margin-left: -45%;
+                margin-top: -45%;
+            }
+            .zindex-container h2{
+                height: 2.5em;
+                background-color: #c30c22;
+                text-align: center;
+                line-height: 2.5em;
+                border-radius: 5px 5px 0 0;
+                color: #fff;
+                font-weight: normal;
+                font-size: 1.2em;
+            }
+            
+            .zm-logo img{
+                width: 60%;
+                margin-left: 22%;
+                margin-top: 15%;
+            }
+            .zm-advantage{
+                margin-left: 10%;
+                margin-top: 3%;
+                font-size: 0.6em;
+                list-style-position:inside;
+                line-height: 1.5em;
+            }
+            .zm-advantage h3{
+                font-weight: normal;
+                color: #c30c22;
+            }
+            .zm-span img{
+                width:100%;
+                padding-top: 15%;
+            }
+            .nomore-tips{
+                margin-left: 9%;
+                margin-top: 5%;
+            }
+            .tips{
+                font-size: 0.6em;
+            }
+            .btn-shop{
+                margin-left: 1%;
+                margin-top: 5%;
+            }
+            .gofornow,.goonshop {
+                width: 48%;
+            }
+    </style>
+    
+</head>
+<body> 
+    <div class="zindex-div" id="zindex-div">
+        <div class="zindex-container">
+            <h2>欢迎加入织梦者</h2>
+            <div class="zm-logo">
+                <img src="img/LOGO.png" />
+            </div>
+            <div class="zm-span">
+                <img src="img/hr.jpg" />
+            </div>
+            <ul class="zm-advantage">
+                <h3>成为织梦者的优势：</h3>
+                <li>织梦者传播性强、发展空间广。</li>
+                <li>织梦者轻松推送即可坐享提成。</li>
+                <li>成为织梦者购物即可享受巨额优惠。</li>
+            </ul>
+            <input type="radio" class="nomore-tips" /><span class="tips">不再提醒</span>
+            <div class="btn-shop">
+                <a href="#"><img class="gofornow" src="img/button1.png"></a>
+                <a href="#"><img class="goonshop" src="img/button2.png"></a>
+            </div>
+        </div>
+    </div>
+</body></html>

@@ -1,0 +1,16 @@
+* { 
+margin: 0px;padding: 0px; 
+} 
+
+
+body { 
+background-color: #eeeeee; 
+} 
+span { 
+color: red; 
+} 
+#txt { 
+color: #f00;border: 1px solid #7d1515; 
+} 
+.btn { 
+background-color: #a52a2a;border: none;color: white;width: 100px;height: 28px; 

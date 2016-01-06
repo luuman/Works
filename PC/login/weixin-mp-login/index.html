@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="dns-prefetch" href="//res.wx.qq.com">
+	<link rel="dns-prefetch" href="//mmbiz.qpic.cn">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="shortcut icon" type="image/x-icon" href="https://res.wx.qq.com/mpres/zh_CN/htmledition/comm_htmledition/images/icon/common/favicon.ico">
+	<!-- <link rel="stylesheet" href="https://res.wx.qq.com/mpres/htmledition/style/wap_style/page/home/login270806.css">
+	<link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/wap_style/widget/page_tips270806.css" />
+	<link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/wap_style/widget/tips/tips_light270806.css" /> -->
+
+	<link rel="stylesheet" href="css/login270806.css">
+	<link rel="stylesheet" type="text/css" href="css/page_tips270806.css" />
+	<link rel="stylesheet" type="text/css" href="css/tips_light270806.css" />
+	
+	<title>登录</title>
+</head>
+
+<body id="login" class="zh_CN page_login" >
+	<div class="wx_login">
+		<div class="con">
+
+			<div class="page_hd">
+			
+			<div class="page_tit">微信<span class="dot">.</span>公众平台</div>		
+			      
+			</div>
+		
+			<form id="js_form_login" class="login_form cell_form ">
+			    <div class="frm_ctrl login_main">
+			        <div class="cells cells_split login_input">
+			            <div class="cell">
+			                
+			                <div class="cell_bd cell_primary">
+			                    <input type="text" placeholder="邮箱/微信号/QQ号" id="js_input_username" class="frm_input" name="username">
+			                </div>
+			            </div>
+
+			            <div class="cell">
+			                
+			                <div class="cell_bd cell_primary">
+			                    <input type="password" placeholder="密码" class="frm_input" id="js_input_password" name="password">
+			                </div>
+			            </div>
+
+			            <div id="js_div_imgcode" class="cell frm_vcode_cell" style="display:none">
+			                
+			                <div class="cell_bd cell_primary">
+			                    <input type="text" placeholder="验证码" class="frm_input" id="js_input_imgcode" name="imgcode">
+			                </div>
+			                <div class="cell_ft frm_vimg_wrp">
+			                    <img id="js_img_code" class="imgcode" src="" />
+			                </div>
+			                <a href="javascript:;" id="js_btn_changeimg" class="imgcode_link">换一张</a>
+			            </div>  
+			        </div>
+			    </div>
+
+			    
+			    <div class="cells_split cells_form cells_select cells_checkbox remember_info">
+			        <label class="cell frm_select_label" for="js_input_remember">
+			            <input type="checkbox" class="frm_select" name="checkbox1" id="js_input_remember" checked="checked">
+			            <div class="cell_hd icon_selected_wrp">
+			                <i class="icon_selected"></i>
+			                <em class="icon_arrow"></em>
+			            </div>
+			            <div class="cell_bd cell_primary">
+			                <p class="mt_v">记住我</p>
+			            </div>
+			        </label>
+			        
+			    </div>
+
+			    <div class="btn_outer">
+			        <button class="btn  actived btn_login" id="js_btn_submit">登录</button> 
+			    </div>
+			   
+			</form>
+		</div> 
+		<div class="ft_menu">
+			<a href="http://kf.qq.com/touch/scene_product.html?scene_id=kf19">帮助中心</a>&nbsp;&nbsp;&nbsp;
+			<a href="http://mp.weixin.qq.com/mp/opshowpage?action=main#wechat_redirect" target="http://mp.weixin.qq.com/mp/opshowpage?action=main#wechat_redirect">运营中心</a>
+		</div>	
+	</div>
+	
+	<script>window.moon_map = {"biz_common/utils/spin.js":"/mpres/zh_CN/htmledition/js/biz_common/utils/spin26d05a.js","wap_js/common/utils/http.js":"/mpres/zh_CN/htmledition/js/wap_js/common/utils/http270806.js","wap_js/common/ui/Tips.js":"/mpres/zh_CN/htmledition/js/wap_js/common/ui/Tips270806.js","wap_js/common/ui/hud.js":"/mpres/zh_CN/htmledition/js/wap_js/common/ui/hud270806.js","biz_common/utils/cookie.js":"/mpres/zh_CN/htmledition/js/biz_common/utils/cookie26d05a.js","biz_wap/zepto/ajax.js":"/mpres/zh_CN/htmledition/js/biz_wap/zepto/ajax26d05a.js","biz_wap/zepto/event.js":"/mpres/zh_CN/htmledition/js/biz_wap/zepto/event26d05a.js","biz_wap/zepto/zepto.js":"/mpres/zh_CN/htmledition/js/biz_wap/zepto/zepto26d05a.js","wap_js/home/login.js":"/mpres/zh_CN/htmledition/js/wap_js/home/login27405c.js"};
+	</script>
+	<!-- <script type="text/javascript" src="https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_wap/moon26d05a.js">
+	</script>
+-->
+	<script type="text/javascript" src="js/moon26d05a.js">
+	</script>
+	<script>
+	    var wx = {};
+		wx.key = '5d7e5838e70f6a1d505b4560c6c9f454fe9baa347454d1ddcacf83a06c09c22c3e111d76c50c321c00166dc86a63fb40';
+		wx.uin = 'NjgwMDIxNzEw';
+		wx.pass_ticket = 'adqrobgaBpHG3mApQDygfyPZMRXi+FJYp+EdkBPwUq145DoBneFCzu1UyKDxUxOa';
+	    seajs.use("wap_js/home/login.js");
+	</script>
+
+	<!-- 
+    <script type="text/javascript" src="https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wap_js/common/utils/share270806.js" async="async"></script>
+	-->
+    <script type="text/javascript" src="js/share270806.js" async="async"></script>
+</body>
+</html>

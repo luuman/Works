@@ -1,0 +1,242 @@
+@charset "utf-8";
+/* Reset CSS
+ * --------------------------------------- */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+form,fieldset,input,textarea,p,blockquote,th,td {
+    padding: 0;
+    margin: 0;
+}
+a{
+	text-decoration:none;
+}
+table {
+    border-spacing: 0;
+}
+fieldset,img {
+    border: 0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+    font-weight: normal;
+    font-style: normal;
+}
+strong{
+	font-weight: bold;
+}
+ol,ul {
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+caption,th {
+    text-align: left;
+
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+    font-size: 100%;
+    margin:0;
+    padding:0;
+    color:#f2f2f2;
+}
+q:before,q:after {
+    content:'';
+}
+abbr,acronym { border: 0;
+}
+
+/* Custom CSS
+ * --------------------------------------- */
+body{
+	font-family: 'Lato', Calibri, Arial, sans-serif, "微软雅黑";
+	color: #f2f2f2;
+}
+h1{
+	font-size: 6em;
+}
+p{
+	font-size: 2em;
+}
+.section{
+	text-align: center;
+}
+#menu{
+	position:fixed;
+	top:0;
+	left:0;
+	height: 40px;
+	z-index: 70;
+	width: 100%;
+	padding: 0;
+	margin:0;
+	text-align: center;
+}
+
+/* Menu
+ * --------------------------------------- */
+#menu li {
+	display:inline-block;
+	color: #000;
+	margin-top:25px;
+	margin-left:180px;
+}
+#menu {
+}
+
+#menu li.active{
+	border-bottom: 4px solid #6ad6a0;
+	color: #5e5e5e;
+}
+#menu li a{
+	text-decoration:none;
+	color: #5e5e5e;
+	font-family: "微软雅黑";
+	font-size: 20px;
+}
+#menu li.active a:hover{
+	color: #000;
+}
+#menu li:hover{
+	background: rgba(255,255,255, 0.8);
+}
+#menu li a,
+#menu li.active a{
+	padding: 9px 18px;
+	display:block;
+}
+#menu li.active a{
+	color: #5e5e5e;
+	font-family: "微软雅黑";
+	font-size:20px;
+}
+
+.intro p{
+	width: 55%;
+	margin: 0 auto;
+	font-size: 1.5em;
+}
+.twitter-share-button{
+	position: fixed;
+	z-index: 99;
+	right: 149px;
+	top: 9px;
+}
+.zong {
+	background-image: url(../images/zong.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 768px;
+	width: 1024px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+.jion {
+	background-image: url(../images/join_03.png);
+	background-repeat: no-repeat;
+	height: 62px;
+	width: 224px;
+	position: absolute;
+	bottom: 150px;
+	float: left;
+	margin-left: 100px;
+	left: 50%;
+}
+.jion:hover {
+	background-image: url(../images/join_on_03.png);
+	background-repeat: no-repeat;
+}
+.jionus {
+	height: 92px;
+	width: 305px;
+	position: absolute;
+	float: left;
+	margin-left: 70px;
+	margin-top: 707px;
+	left: 50%;
+}
+
+.more {
+	background-image: url(../images/more_on_07.png);
+	background-repeat: no-repeat;
+	float: left;
+	height: 27px;
+	width: 77px;
+	margin-top: 680px;
+	position: absolute;
+	margin-left: -50px;
+	left: 50%;
+}
+.more:hover {
+	background-image: url(../images/more_07.png);
+	background-repeat: no-repeat;
+}
+.gaojiangli {
+	background-image: url(../images/jiangli.png);
+	background-repeat: no-repeat;
+	height: 43px;
+	width: 137px;
+	float: left;
+	position: absolute;
+	margin-top: 750px;
+	margin-left: -80px;
+	left: 50%;
+}
+
+
+
+.yongjin {
+	background-image: url(../images/gaoyongjin.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 768px;
+	width: 1024px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+.jiangli {
+	background-image: url(../images/gaojiangli.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 768px;
+	width: 1024px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+.jiesuan {
+	background-image: url(../images/jiesuan.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 768px;
+	width: 1024px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+.shuishou {
+	height: 768px;
+	width: 1024px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	background-image: url(../images/shuishou.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.jishu {
+	background-image: url(../images/jishu.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 768px;
+	width: 1024px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}

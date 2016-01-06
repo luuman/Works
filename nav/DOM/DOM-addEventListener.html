@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>DOM-addEventListener</title>
+</head>
+<body>
+	<p>该实例使用 addEventListener() 方法在同一个按钮添加两个点击事件。</p>
+	<button id="myBtn" value="value值">点击</button>
+	<script type="text/javascript">
+		//DOM2级事件
+		var myBtn;
+		myBtn = document.getElementById("myBtn");
+
+		// change1
+		myBtn.addEventListener("click", change1,false);//'事件','函数'.'布尔值'冒泡阶段（最大的兼容各种浏览器）
+		function change1(){
+			alert ("change1");
+		}
+			// 删除事件（必须传入，添加时相同的参数）
+			myBtn.removeEventListener("click", change1,false);//默认，事件捕获阶段调用事件处理程序
+
+		// change2
+		myBtn.addEventListener("click", change2,true);//事件冒泡阶段调用事件处理程序
+		function change2(){
+			alert ("change2");
+		}
+			myBtn.removeEventListener("click", change2,true);
+
+		// change3
+		myBtn.addEventListener("click", function (){//密名函数
+			alert ("change3");
+			alert (this.value);
+		});
+			// 通过addEventListener()添加匿名函数是没办法remove掉的。
+			myBtn.removeEventListener("click", function (){//密名函数
+			alert ("change3");
+			alert (this.value);
+		});
+			// 通过addEventListener只能通过removeEventListener进行删除，
+	</script>
+	<script type="text/javascript">
+	跨浏览器的解决方法：
+	var x = document.getElementById("myBtn");
+	if (x.addEventListener) {                    //所有主流浏览器，除了 IE 8 及更早 IE版本
+	    x.addEventListener("click", myFunction);
+	} else if (x.attachEvent) {                  // IE 8 及更早 IE 版本
+	    x.attachEvent("onclick", myFunction);
+	}
+	</script>
+</body>
+</html>

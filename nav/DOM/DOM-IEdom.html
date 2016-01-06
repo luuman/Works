@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>DOM-IEdom</title>
+</head>
+<body>
+	<p>事件。</p>
+	<button id="myBtn" value="value值">点击</button>
+	<script type="text/javascript">
+		// 调用的函数
+		function change2(){
+			alert ("change2");
+		}
+		// 将DOM事件封装在对象中，进行调用。
+		var eventUtil={
+			//添加句柄
+			addHandler:function(element,type,handler){
+				if(element.addEventListener){//DOM 2级
+					element.addEventListener(type,handler,false);
+				}else if(element.attachEvent){//IE
+					element.attachEvent('on'+type,handler);
+				}else{//DOM 0级
+					element['on'+type]=handler;
+					//element.onclick===element[onclick]
+				}
+			},
+			//删除句柄
+			removeHandler:function(element,type,handler){
+				if(element.removeEventListener){//DOM 2级
+					element.removeEventListener(type,handler,false);
+				}else if(element.detachEvent){//IE
+					element.detachEvent('on'+type,handler);
+				}else{//DOM 0级
+					element['on'+type]=null;
+					//element.onclick===element[onclick]
+				}
+			}
+		}
+		// 调动
+		eventUtil.addHandler(myBtn,'click',change2);
+		eventUtil.removeHandler(myBtn,'click',change2);
+	</script>
+</body>
+</html>

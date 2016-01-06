@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>我们互动下</title>
+</head>
+<body>
+	<p id="con"></p>
+	<form>
+		<input type="button" onclick="jump()" value="点击进入" />
+	</form>
+	<script type="text/javascript">
+		document.getElementById("con").innerHTML="js进阶篇";
+		function jump(){
+		    var mymessage=confirm("关注JS高级篇");
+		    if(mymessage==true)
+		    {
+		        document.write("恭喜您进入年薪百万的节奏!");
+		    }
+		    else
+		    {
+		        document.write("o(︶︿︶)o 唉!不管你是男屌丝还是女屌丝，不学习你始终都会是个屌丝……！");
+		    }
+	  	}       
+	</script>
+</body>
+</html>

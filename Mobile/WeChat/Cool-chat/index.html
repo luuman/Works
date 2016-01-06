@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<title>酷炫炸天的聊天效果</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta author="极客标签：www.gbtags.com" />
+<meta name="Description" content="极客标签是一个基于web的在线极客编程知识分享&学习平台，能够帮助你快速高效地学习代码编程并方便的在线实时分享编程技巧和心得" />
+<meta name="Keywords" content="极客,极客标签,轻视频,代码录播,在线调试,前端,前端社区,前端特效,素材,html5,javascript,css3,jquery,bootstrap,bootstrap3" />
+	<style>
+		@import url(css/normalize/3.0.1/normalize.min.css);
+		@import url(css/font-awesome/4.1.0/css/font-awesome.min.css);
+	/*		@import url(http://cdn.gbtags.com/normalize/3.0.1/normalize.min.css);
+		@import url(http://cdn.gbtags.com/font-awesome/4.1.0/css/font-awesome.min.css);*/
+		/*CSS源代码*/
+		body{
+			background:#CFCFCF;
+		}
+		*,
+		*:after,
+		*:before {
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+		.chat-window button:focus {
+			-webkit-tap-highlight-color: rgba(255,255,255,0);
+			-webkit-tap-highlight-color: transparent;
+			outline: none;
+		}
+
+		.chat-window {
+			width: 310px;
+			margin: 0 auto;
+			overflow: hidden;
+			border: 0px solid #36383a;
+			border-width: 50px 15px;
+			color: #474c57;
+			border-radius: 20px;
+			font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		}
+
+		@media screen and (max-width:380px) {
+			.chat-window {
+				border: none;
+				border-radius: 0px;
+			}
+		}
+
+		.chat-window a {
+			color: #eab1c6;
+		}
+
+		.chat-window a:hover,
+		.chat-window a:focus {
+			color: #C7668A;
+		}
+
+		.chat-messages {
+			height: 460px;
+			overflow-x: hidden;
+			overflow-y: auto;
+			width: 100%;
+			position: relative;
+			border-radius: 2px 2px 0 0;
+			background: #BEE4F9;
+		}
+
+		.chat-messages-list {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			width: 100%;
+			padding: 15px 25px 60px;
+		}
+
+		.chat-message {
+			position: relative;
+			font-size: 0;
+			margin-bottom: 10px;
+		}
+
+		.chat-message-effect {
+			position: absolute;
+		}
+
+		.chat-message-bubble {
+			display: inline-block;
+			font-size: 14px;
+			max-width: 350px;
+			background: #fff;
+			padding: 8px 14px;
+			border-radius: 18px;
+			min-width: 0;
+		}
+
+		.chat-message-self.chat-message-merge-start .chat-message-bubble {
+			border-bottom-right-radius: 0;
+		}
+
+		.chat-message-self.chat-message-merge-middle .chat-message-bubble {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+
+		.chat-message-self.chat-message-merge-end .chat-message-bubble {
+			border-top-right-radius: 0;
+		}
+
+		.chat-message-self {
+			text-align: right;
+		}
+
+		.chat-message-self .chat-message-bubble,
+		.chat-message-effect .chat-message-bubble { 
+			background: #32a8e6;
+			color: #fff;
+			text-align: left;
+		}
+
+		.chat-input-bar {
+			position: relative;
+			background:#32A8E6;
+		}
+
+		.chat-input-wrapper {
+			position: relative;
+			z-index: 2;
+			/*background: #32A8E6;*/
+			padding: 0.5em 0;
+			border-radius: 0 0 2px 2px;
+			color: #fff;
+		}
+
+		.chat-input-wrapper,
+		.chat-send {
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-flex-wrap: wrap;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+			-webkit-justify-content: center;
+			justify-content: center;
+			font-size: 16px;
+		}
+
+		.chat-input-tool {
+			background: transparent;
+			border: none;
+			padding: 0 0.75em;
+			color: inherit;
+		}
+
+		.chat-input {
+			outline: none;
+			resize: none;
+			overflow: hidden;
+			min-height: 38px;
+			-webkit-flex: 1;
+			flex: 1;
+			font-size: 14px;
+			padding: 10px 0 7px;
+			cursor: text;
+		}
+
+		.chat-input:empty::before {
+			content: "请输入...";
+			color: #2B8EC2;
+		}
+
+		.chat-input:focus::before {
+			content: "";
+		}
+
+		.chat-send {
+			background: transparent;
+			border: none;
+			position: relative;
+			overflow: hidden;
+			padding: 0 0.75em;
+			color: inherit;
+			-webkit-transition: color 0.6s;
+			transition: color 0.6s;
+		}
+
+		.chat-input:empty + .chat-send {
+			color: #2B8EC2;
+		}
+
+		.chat-send>i {
+			position: relative;
+		}
+
+		.chat-effect-container {
+			position: absolute;
+			top: -100px;
+			width: 100%;
+		}
+
+		.chat-effect-bar {
+			background: #32a8e6;
+			position: absolute;
+			top: 100px;
+			width: 100%;
+			height: 40px;
+			-webkit-transform: rotateY(0);
+			transform: rotateY(0);
+		}
+
+		.chat-effect-dots {
+			position: absolute;
+		}
+
+		.chat-effect-dot {
+			background: #32a8e6;
+			position: absolute;
+			width: 15px;
+			height: 15px;
+			border-radius: 100%;
+		}
+
+		.chat-info-container {
+			position: absolute;
+			top: -20px;
+			font-size: 12px;
+			color: #2B8EC2;
+		}
+
+		.chat-info-typing {
+			position: absolute;
+			left: 80px;
+			white-space: nowrap;
+		}
+	</style>
+</head>
+<body>
+	<!-- HTML代码片段中请勿添加<body>标签 //-->
+	<div id="container">
+	      <div class="chat-window">
+	          <div class="chat-messages">
+	            <ol class="chat-messages-list">
+	              <li class="chat-message chat-message-friend">
+	                <div class="chat-message-bubble">
+	                  你好
+	                </div>
+	              </li>
+	              
+	              <li class="chat-message chat-message-friend">
+	                <div class="chat-message-bubble">
+	                  请在下面的输入框中输入文字
+	                </div>
+	              </li>
+	              <li class="chat-message chat-message-friend">
+	                <div class="chat-message-bubble">
+	                  输入 :0
+	                </div>
+	              </li>
+	            </ol>
+	          </div>
+	          <div class="chat-input-bar">
+	            <div class="chat-info-container">
+	              
+	            </div>
+	            <div class="chat-effect-container">
+	              <div class="chat-effect-bar"></div>
+	            </div>
+	            <div class="chat-input-wrapper">
+	              <button class="chat-input-tool">
+	                <i class="fa fa-camera"></i>
+	              </button>
+	              <div class="chat-input" contenteditable></div>
+	              <button class="chat-send">
+	                <i class="fa fa-paper-plane"></i>
+	              </button>
+	            </div>
+	          </div>
+	      </div>
+	      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="800">
+	        <defs>
+	          <filter id="goo">
+	            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+	            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+	            <feComposite in="SourceGraphic" in2="goo" />
+	          </filter>
+	        </defs>
+	      </svg>
+	</div>
+
+
+
+	<!-- 推荐开源CDN来选取需引用的外部JS //-->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<!-- http://cdn.gbtags.com/jquery/1.11.1/jquery.min.js -->
+	<script src="js/TweenMax.min.js"></script>
+	<!-- http://cdn.bootcss.com/gsap/latest/TweenMax.min.js -->
+
+	<script>
+		/*Javascript代码片段*/
+		var KEY_ENTER=13;
+		$(document).ready(function(){
+			var $input=$(".chat-input")
+				,$sendButton=$(".chat-send")
+				,$messagesContainer=$(".chat-messages")
+				,$messagesList=$(".chat-messages-list")
+				,$effectContainer=$(".chat-effect-container")
+				,$infoContainer=$(".chat-info-container")
+
+				,messages=0
+				,bleeding=100
+				,isFriendTyping=false
+				,incomingMessages=0
+				,lastMessage=""
+			;
+			
+			var lipsum="爱过 你欠我的钱 什么时候还 我们是极客标签 做最牛逼的前端在线教育平台";
+
+			function gooOn(){
+				setFilter('url(#goo)');
+			}
+			function gooOff(){
+				setFilter('none');
+			}
+			function setFilter(value){
+				$effectContainer.css({
+					webkitFilter:value,
+					mozFilter:value,
+					filter:value,
+				});
+			}
+
+			function addMessage(message,self){
+				var $messageContainer=$("<li/>")
+					.addClass('chat-message '+(self?'chat-message-self':'chat-message-friend'))
+					.appendTo($messagesList)
+				;
+				var $messageBubble=$("<div/>")
+					.addClass('chat-message-bubble')
+					.appendTo($messageContainer)
+				;
+				$messageBubble.text(message);
+
+				var oldScroll=$messagesContainer.scrollTop();
+				$messagesContainer.scrollTop(9999999);
+				var newScroll=$messagesContainer.scrollTop();
+				var scrollDiff=newScroll-oldScroll;
+				TweenMax.fromTo(
+					$messagesList,0.4,{
+						y:scrollDiff
+					},{
+						y:0,
+						ease:Quint.easeOut
+					}
+				);
+
+				return {
+					$container:$messageContainer,
+					$bubble:$messageBubble
+				};
+			}
+			function sendMessage(){
+				var message=$input.text();
+				
+				if(message=="") return;
+				
+				lastMessage=message;
+
+				var messageElements=addMessage(message,true)
+					,$messageContainer=messageElements.$container
+					,$messageBubble=messageElements.$bubble
+				;
+
+				var oldInputHeight=$(".chat-input-bar").height();
+				$input.text('');
+				updateChatHeight();
+				var newInputHeight=$(".chat-input-bar").height();
+				var inputHeightDiff=newInputHeight-oldInputHeight
+
+				var $messageEffect=$("<div/>")
+					.addClass('chat-message-effect')
+					.append($messageBubble.clone())
+					.appendTo($effectContainer)
+					.css({
+						left:$input.position().left-12,
+						top:$input.position().top+bleeding+inputHeightDiff
+					})
+				;
+
+
+				var messagePos=$messageBubble.offset();
+				var effectPos=$messageEffect.offset();
+				var pos={
+					x:messagePos.left-effectPos.left,
+					y:messagePos.top-effectPos.top
+				}
+
+				var $sendIcon=$sendButton.children("i");
+				TweenMax.to(
+					$sendIcon,0.15,{
+						x:30,
+						y:-30,
+						force3D:true,
+						ease:Quad.easeOut,
+						onComplete:function(){
+							TweenMax.fromTo(
+								$sendIcon,0.15,{
+									x:-30,
+									y:30
+								},
+								{
+									x:0,
+									y:0,
+									force3D:true,
+									ease:Quad.easeOut
+								}
+							);
+						}
+					}
+				);
+
+				gooOn();
+
+				
+				TweenMax.from(
+					$messageBubble,0.8,{
+						y:-pos.y,
+						ease:Sine.easeInOut,
+						force3D:true
+					}
+				);
+
+				var startingScroll=$messagesContainer.scrollTop();
+				var curScrollDiff=0;
+				var effectYTransition;
+				var setEffectYTransition=function(dest,dur,ease){
+					return TweenMax.to(
+						$messageEffect,dur,{
+							y:dest,
+							ease:ease,
+							force3D:true,
+							onUpdate:function(){
+								var curScroll=$messagesContainer.scrollTop();
+								var scrollDiff=curScroll-startingScroll;
+								if(scrollDiff>0){
+									curScrollDiff+=scrollDiff;
+									startingScroll=curScroll;
+
+									var time=effectYTransition.time();
+									effectYTransition.kill();
+									effectYTransition=setEffectYTransition(pos.y-curScrollDiff,0.8-time,Sine.easeOut);
+								}
+							}
+						}
+					);
+				}
+
+				effectYTransition=setEffectYTransition(pos.y,0.8,Sine.easeInOut);
+				
+				// effectYTransition.updateTo({y:800});
+
+				TweenMax.from(
+					$messageBubble,0.6,{
+						delay:0.2,
+						x:-pos.x,
+						ease:Quad.easeInOut,
+						force3D:true
+					}
+				);
+				TweenMax.to(
+					$messageEffect,0.6,{
+						delay:0.2,
+						x:pos.x,
+						ease:Quad.easeInOut,
+						force3D:true
+					}
+				);
+
+				TweenMax.from(
+					$messageBubble,0.2,{
+						delay:0.65,
+						opacity:0,
+						ease:Quad.easeInOut,
+						onComplete:function(){
+							TweenMax.killTweensOf($messageEffect);
+							$messageEffect.remove();
+							if(!isFriendTyping)
+								gooOff();
+						}
+					}
+				);
+
+				messages++;
+
+				if(Math.random()<0.65 || lastMessage.indexOf("?")>-1 || messages==1) getReply();
+			}
+			function getReply(){
+				if(incomingMessages>2) return;
+				incomingMessages++;
+				var typeStartDelay=1000+(lastMessage.length*40)+(Math.random()*1000);
+				setTimeout(friendIsTyping,typeStartDelay);
+
+				var source=lipsum.toLowerCase();
+				source=source.split(" ");
+				var start=Math.round(Math.random()*(source.length-1));
+				var length=Math.round(Math.random()*13)+1;
+				var end=start+length;
+				if(end>=source.length){
+					end=source.length-1;
+					length=end-start;
+				}
+				var message="";
+				for (var i = 0; i < length; i++) {
+					message+=source[start+i]+(i<length-1?" ":"");
+				};
+				message+=Math.random()<0.4?"?":"";
+				message+=Math.random()<0.2?" :)":(Math.random()<0.2?" :(":"");
+
+				var typeDelay=300+(message.length*50)+(Math.random()*1000);
+
+				setTimeout(function(){
+					receiveMessage(message);
+				},typeDelay+typeStartDelay);
+
+				setTimeout(function(){
+					incomingMessages--;
+					if(Math.random()<0.1){
+						getReply();
+					}
+					if(incomingMessages<=0){
+						friendStoppedTyping();
+					}
+				},typeDelay+typeStartDelay);
+			}
+			function friendIsTyping(){
+				if(isFriendTyping) return;
+
+				isFriendTyping=true;
+
+				var $dots=$("<div/>")
+					.addClass('chat-effect-dots')
+					.css({
+						top:-30+bleeding,
+						left:10
+					})
+					.appendTo($effectContainer)
+				;
+				for (var i = 0; i < 3; i++) {
+					var $dot=$("<div/>")
+						.addClass("chat-effect-dot")
+						.css({
+							left:i*20
+						})
+						.appendTo($dots)
+					;
+					TweenMax.to($dot,0.3,{
+						delay:-i*0.1,
+						y:30,
+						yoyo:true,
+						repeat:-1,
+						ease:Quad.easeInOut
+					})
+				};
+
+				var $info=$("<div/>")
+					.addClass("chat-info-typing")
+					.text("你的朋友正在输入")
+					.css({
+						transform:"translate3d(0,30px,0)"
+					})
+					.appendTo($infoContainer)
+
+				TweenMax.to($info, 0.3,{
+					y:0,
+					force3D:true
+				});
+
+				gooOn();
+			}
+
+			function friendStoppedTyping(){
+				if(!isFriendTyping) return
+
+				isFriendTyping=false;
+
+				var $dots=$effectContainer.find(".chat-effect-dots");
+				TweenMax.to($dots,0.3,{
+					y:40,
+					force3D:true,
+					ease:Quad.easeIn,
+				});
+
+				var $info=$infoContainer.find(".chat-info-typing");
+				TweenMax.to($info,0.3,{
+					y:30,
+					force3D:true,
+					ease:Quad.easeIn,
+					onComplete:function(){
+						$dots.remove();
+						$info.remove();
+
+						gooOff();
+					}
+				});
+			}
+			function receiveMessage(message){
+				var messageElements=addMessage(message,false)
+					,$messageContainer=messageElements.$container
+					,$messageBubble=messageElements.$bubble
+				;
+
+				TweenMax.set($messageBubble,{
+					transformOrigin:"60px 50%"
+				})
+				TweenMax.from($messageBubble,0.4,{
+					scale:0,
+					force3D:true,
+					ease:Back.easeOut
+				})
+				TweenMax.from($messageBubble,0.4,{
+					x:-100,
+					force3D:true,
+					ease:Quint.easeOut
+				})
+			}
+
+			function updateChatHeight(){
+				$messagesContainer.css({
+					height:460-$(".chat-input-bar").height()
+				});
+			}
+
+			$input.keydown(function(event) {
+				if(event.keyCode==KEY_ENTER){
+					event.preventDefault();
+					sendMessage();
+				}
+			});
+			$sendButton.click(function(event){
+				event.preventDefault();
+				sendMessage();
+				// $input.focus();
+			});
+			$sendButton.on("touchstart",function(event){
+				event.preventDefault();
+				sendMessage();
+				// $input.focus();
+			});
+
+			$input.on("input",function(){
+				updateChatHeight();
+			});
+
+			gooOff();
+			updateChatHeight();
+		})
+	</script>
+</body>
+</html>

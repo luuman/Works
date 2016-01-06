@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0"/>-->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+<meta name="Keywords" content=" qq客服，qq在线客服，qq客服中心，qq客服网站，qq客服在线，qq腾讯客服，qq客服电话，腾讯客服qq，腾讯客服，腾讯客服网站，腾讯客服首页，腾讯客服官网，腾讯官网客服，腾讯客服中心，腾讯客户服务，腾讯客服电话"/>
+<meta name="description" content="腾讯客服官网网站，为您解决使用腾讯产品过程中遇到的问题，腾讯客服中心提醒您：谨防网络骗术，教您如何识别网络骗术"/>
+<meta http-equiv="Content-Language" content="zh-cn"/>
+<meta name="robots" content="all"/>
+<meta name="author" content="Tencent-KF"/>
+<meta name="Copyright" content="Tencent"/>
+	<title>帮助与反馈</title>
+	<script src="/touch/js/lib/zepto.min.js" type="text/javascript" ></script>
+<script src="/touch/js/lib/detect.js" type="text/javascript" ></script>
+<script src="/touch/js/lib/fx.js" type="text/javascript" ></script>
+<script src="//imgcache.qq.com/bossweb/service/js/zepto/touch.js" type="text/javascript"></script>
+<script src="/touch/js/lib/touch_util.js" type="text/javascript"></script>
+<script src="/touch/js/module/check_platfrom.js" type="text/javascript"></script>
+    <link href="//imgcache.qq.com/bossweb/service/touch/css/global/reset.css" rel="stylesheet" type="text/css">
+    <link href="//imgcache.qq.com/bossweb/service/touch/css/global/share.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" rev="stylesheet" href="//imgcache.qq.com/bossweb/service/touch/css/wx_inner.css" type="text/css" media="screen"/>
+    	<script type="text/javascript" >var is_app=1;</script>
+         <script>
+;(function(win,doc){
+	function append_skin(skin_name){
+		 var container = doc.getElementsByTagName("head")[0],
+		    addStyle = doc.createElement("link");
+		    addStyle.rel = "stylesheet";
+		    addStyle.type = "text/css";
+		    addStyle.media = "screen";
+		    addStyle.href = skin_name;
+		    container.appendChild(addStyle);			
+	}	
+if('localStorage' in win && win['localStorage']!== null){
+	var pro_skin_app=localStorage.getItem("pro_skin_app"),pro_skin=localStorage.getItem("pro_skin");
+	if(typeof is_app !=="undefined" && is_app===1 &&pro_skin_app!==null  && pro_skin_app!=-1){//内嵌皮肤存在并且不是默认值
+		window.console && console.log("loading app_skin");
+		append_skin(pro_skin_app);
+	}
+	if( typeof is_app !=="undefined" && is_app===0 &&pro_skin!==null && pro_skin!=="undefined" &&pro_skin!=-1){//独立版皮肤存在并且不是默认值
+		window.console && console.log("loading web_skin");
+		append_skin(pro_skin);
+	}
+}
+}(window,document));
+</script>
+</head>
+<body class="bg_efeff4"  ontouchstart>
+    <!--主内容区域-begin-->
+    <div class="h_f_v190_wrapper" id="search_content" style="display: none;">
+    	<h2>具体问题</h2>
+        <div>
+    		<ul class="list1"  id="detail_list">
+            </ul>
+        </div>
+    </div>
+    <!--主内容区域-end-->
+<script src="/static/ext/url.js" type="text/javascript" ></script>   
+<script src="/touch/js/module/faqlist_base.js" type="text/javascript" ></script> 
+<script>
+var lan="zh";
+</script> 
+<script type="text/javascript" src="./faqlist_weixin.js?v=dd"></script>   
+<script type="text/javascript" src="/touch/js/module/touch_report.js"></script> 
+<script src="//pingjs.qq.com/tcss.ping.js" type="text/javascript" ></script>
+<script type="text/javascript" src="/touch/js/module/getSceneId.js?r=1"></script>
+<script type="text/javascript" src="/touch/js/module/reportSceneId.js"></script>
+
+</body>
+</html>

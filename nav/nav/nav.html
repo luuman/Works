@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <title>U范堂</title>
+    <!-- <link rel="shortcut icon" href="image/favicon.ico"> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <style>
+        .indexbox{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="mon" class="indexbox">
+        <div>
+            <a class="a-1" href="http://wap.koudaitong.com/v2/showcase/feature?alias=11c00d3zn"></a>
+        </div>
+        <div>
+            <a class="a-2" href="http://wap.koudaitong.com/v2/showcase/feature?alias=novoyrw9"></a>
+        </div>
+        <div>
+            <a class="a-3" href="http://wap.koudaitong.com/v2/showcase/feature?alias=jd2tc77"></a>
+        </div>
+        <div>
+            <a class="a-4" href="http://wap.koudaitong.com/v2/showcase/feature?alias=wgx15et8"></a>
+        </div>
+        <div>
+            <a class="a-5" href="http://wap.koudaitong.com/v2/showcase/feature?alias=rmzgfqsu"></a>
+        </div>
+    </div>
+    <div id="tues" class="indexbox">
+        <div>
+            <a class="a-2" href="http://wap.koudaitong.com/v2/showcase/feature?alias=novoyrw9"></a>
+        </div>
+        <div>
+            <a class="a-3" href="http://wap.koudaitong.com/v2/showcase/feature?alias=jd2tc77"></a>
+        </div>
+        <div>
+            <a class="a-4" href="http://wap.koudaitong.com/v2/showcase/feature?alias=wgx15et8"></a>
+        </div>
+        <div>
+            <a class="a-5" href="http://wap.koudaitong.com/v2/showcase/feature?alias=rmzgfqsu"></a>
+        </div>
+        <div>
+            <a class="a-1" href="http://wap.koudaitong.com/v2/showcase/feature?alias=11c00d3zn"></a>
+        </div>
+    </div>
+    <div id="wed" class="indexbox">
+        <div>
+            <a class="a-3" href="http://wap.koudaitong.com/v2/showcase/feature?alias=jd2tc77"></a>
+        </div>
+        <div>
+            <a class="a-4" href="http://wap.koudaitong.com/v2/showcase/feature?alias=wgx15et8"></a>
+        </div>
+        <div>
+            <a class="a-5" href="http://wap.koudaitong.com/v2/showcase/feature?alias=rmzgfqsu"></a>
+        </div>
+        <div>
+            <a class="a-1" href="http://wap.koudaitong.com/v2/showcase/feature?alias=11c00d3zn"></a>
+        </div>
+        <div>
+            <a class="a-2" href="http://wap.koudaitong.com/v2/showcase/feature?alias=novoyrw9"></a>
+        </div>
+    </div>
+    <div id="thurs" class="indexbox">
+        <div>
+            <a class="a-4" href="http://wap.koudaitong.com/v2/showcase/feature?alias=wgx15et8"></a>
+        </div>
+        <div>
+            <a class="a-5" href="http://wap.koudaitong.com/v2/showcase/feature?alias=rmzgfqsu"></a>
+        </div>
+        <div>
+            <a class="a-1" href="http://wap.koudaitong.com/v2/showcase/feature?alias=11c00d3zn"></a>
+        </div>
+        <div>
+            <a class="a-2" href="http://wap.koudaitong.com/v2/showcase/feature?alias=novoyrw9"></a>
+        </div>
+        <div>
+            <a class="a-3" href="http://wap.koudaitong.com/v2/showcase/feature?alias=jd2tc77"></a>
+        </div>
+    </div>
+    <div id="fri" class="indexbox">
+        <div>
+            <a class="a-5" href="http://wap.koudaitong.com/v2/showcase/feature?alias=rmzgfqsu"></a>
+        </div>
+        <div>
+            <a class="a-1" href="http://wap.koudaitong.com/v2/showcase/feature?alias=11c00d3zn"></a>
+        </div>
+        <div>
+            <a class="a-2" href="http://wap.koudaitong.com/v2/showcase/feature?alias=novoyrw9"></a>
+        </div>
+        <div>
+            <a class="a-3" href="http://wap.koudaitong.com/v2/showcase/feature?alias=jd2tc77"></a>
+        </div>
+        <div>
+            <a class="a-4" href="http://wap.koudaitong.com/v2/showcase/feature?alias=wgx15et8"></a>
+        </div>
+    </div>
+    <div class="bg"></div>
+</body>
+    <script>
+        mon=document.getElementById('mon');
+        tues=document.getElementById('tues');
+        wed=document.getElementById('wed');
+        thurs=document.getElementById('thurs');
+        fri=document.getElementById('fri');
+        date=new Date();
+        hours=new Date();
+        hour=hours.getHours();
+        work=date.getDay();
+        if (work==1) {
+            if (hour<14) {
+                mon.style.display='block';
+            }else{
+                tues.style.display='block';
+            }
+        }else if(work==2){
+            if (hour<14) {
+                tues.style.display='block';
+            }else{
+                wed.style.display='block';
+            }
+        }else if(work==3){
+            if (hour<14) {
+                wed.style.display='block';
+            }else{
+                thurs.style.display='block';
+            }
+        }else if(work==4){
+            if (hour<14) {
+                thurs.style.display='block';
+            }else{
+                fri.style.display='block';
+            }
+        }else if(work==5){
+            if (hour<14) {
+                fri.style.display='block';
+            }else{
+                mon.style.display="block";
+            }
+        }else{
+            mon.style.display="block";
+        }
+    </script>
+</html>

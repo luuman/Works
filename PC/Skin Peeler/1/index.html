@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>动态修改页面样式</title>
+	<link href="css/blue.css" rel="stylesheet" id="mylink"/>
+</head>
+
+<body>
+	<div>
+		<span>修改整个页面的样式</span>
+		<br/>
+		<input type="text" id="txt"/>
+		<input type="button" value="提交" class="btn"/>
+	</div>
+
+	<ul id="uList" style="text-decoration: none;margin-top: 100px;">
+		<li style="display: block;width: 30px;height: 20px;background-color: red;" class="red"></li>
+		<li style="display: block;width: 30px;height: 20px;background-color: blue" class="blue"></li>
+	</ul>
+	<script type="text/javascript"> 
+		function gel(id) { 
+		return document.getElementById(id); 
+		} 
+
+		window.onload = function() { 
+		//更换css文件 
+		var lis = gel("uList").childNodes; 
+		for (var i = 0; i < lis.length; i++) { 
+		if (lis[i].nodeType == 1) { 
+		lis[i].onclick = function () { 
+		gel("mylink").href = "css/" + this.className + ".css"; 
+		}; 
+		} 
+		} 
+		}; 
+	</script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+/* Mian 兼容*/
+	body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td, textarea, input { 
+		font-family: "微软雅黑";
+		font-weight: normal; 
+		padding: 0;
+		margin: 0;
+		/*属性允许您以确切的方式定义适应某个区域的具体内容*/
+		box-sizing:border-box;
+		-moz-box-sizing:border-box; /* Firefox */
+		-webkit-box-sizing:border-box; /* Safari */
+	}
+	body {
+		font-size: 62.5%;
+		-webkit-text-size-adjust: none;/*禁用Webkit内核浏览器的文字大小调整功能*/
+		line-height: 1.5;
+	}
+	a, a:link, a:active, a:visited, a:hover{
+		color: #233241;
+		text-decoration: none;
+	}
+	pre{
+		font-size: 12px;
+		width: 100%;
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;/*允许独立的滚动区域和触摸回弹*/
+	}
+	ul{
+		list-style-type: none;
+	}
+/*background*/
+	.bg{
+	    width: 100%;
+	    height: 100%;
+	    position: fixed;
+	    z-index: -1;
+	    background: url(../images/bg.jpg) bottom no-repeat;
+	    background-size: 100%;
+	}
+/*健康的减肥来看*/
+	.header {
+	    background: #FFFFFF;
+	    font-size: 1rem;
+	    font-weight: bold; 
+	    color: #000000;
+	    text-align: center;
+	    line-height: 40px;
+	    height: 40px;
+	    width: 100%;
+	    display: block;
+	}
+	.indexbox{
+	    width: 54%;
+	    left: 23%;
+	    height: 100%;
+	    display: none;
+	    position: fixed;
+	    margin-top: 3%;
+	}
+	.indexbox div{
+		margin-top: 10%;
+		height: 12%;
+		width: 100%;
+		border-radius: 10px;
+	    box-shadow: 8px 8px 20px #000000;
+	}
+	.indexbox div a{
+		width: 100%;
+		height: 100%;
+		display: block;
+		border-radius: 10px;
+		box-shadow: inset 0 0 10px #191515;
+	}
+	.indexbox .a-1{
+		background: url(../images/bg_01.png) no-repeat 50%;
+		background-size: 50%;
+	}
+	.indexbox .a-2{
+		background: url(../images/bg_02.png) no-repeat 50%;
+		background-size: 50%;
+	}
+	.indexbox .a-3{
+		background: url(../images/bg_03.png) no-repeat 50%;
+		background-size: 50%;
+	}
+	.indexbox .a-4{
+		background: url(../images/bg_04.png) no-repeat 50%;
+		background-size: 50%;
+	}
+	.indexbox .a-5{
+		background: url(../images/bg_05.png) no-repeat 50%;
+		background-size: 50%;
+	}
+/*people页面*/
+	/*background*/
+	.bg1{
+	    width: 100%;
+	    height: 100%;
+	    position: fixed;
+	    z-index: -1;
+	    background: url(../images/bg.jpg) no-repeat;
+	    background-size: 100%;
+	}
+	.content{
+		width: 200px;
+		height: 100%;
+		position: fixed;
+		top: 10%;
+		left: 50%;
+		margin-left: -100px;
+	}
+	.content .logo{
+		width: 200px;
+		height: 200px;
+		background: url(../images/logo.png) no-repeat 25px 0;
+		background-size: 150px;
+	}
+	.add {
+		margin-top: 10%;
+	    border-radius: 10px;
+	    box-shadow: 8px 8px 20px #000000;
+	}
+	.add input{
+	    width: 100%;
+	    height: 30px;
+	    border: 0;
+	    color: #fff;
+	    background-color: rgba(0, 0, 0, 0);
+	    border-radius: 5px;
+	    box-shadow: inset 0 0 10px #191515;
+	    font-size: 1.1rem;
+	}
+	.arr{
+	    position: absolute;
+	    /* top: 20%; */
+	    left: 50%;
+	    margin-top: 30%;
+	    margin-left: -85px;
+	    height: 50px;
+	    width: 170px;
+	    border-radius: 10px;
+	    box-shadow: 8px 8px 20px #000000;
+	}
+	.arr .sub {
+	    border: 0;
+	    background: url(../images/button.png) no-repeat 10px 15px;
+	    background-size: 150px;
+	    width: 100%;
+	    height: 100%;
+	    border-radius: 10px;
+	    box-shadow: inset 0 0 10px #191515;
+	}
